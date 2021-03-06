@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "node ./server/index.js",
     "start": "node ./server/main.js",
     "start_test": "npm run start-server & npm run build",
     "start-server": "nodemon --watch server -e js,html server/main.js",

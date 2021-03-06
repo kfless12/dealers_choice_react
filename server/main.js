@@ -1,10 +1,9 @@
 const PORT = process.env.PORT || 8080
 const server = require('./index')
-const [db, faker, sync] = require('./db')
+const db = require('./db/db.js')
 
 const init = async () => {
   try {
-    await sync();
 
     server.listen(PORT, () => console.log(`
 
