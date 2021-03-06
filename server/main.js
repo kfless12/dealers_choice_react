@@ -4,7 +4,8 @@ const [db, faker, sync] = require('./db')
 
 const init = async () => {
   try {
-    sync()
+    await sync();
+
     server.listen(PORT, () => console.log(`
 
           Listening on port ${PORT}
