@@ -15,3 +15,5 @@ const singleUser = ({ user })=>{
             </div>
     )
 }
+
+export default singleUser
