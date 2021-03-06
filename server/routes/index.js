@@ -5,7 +5,7 @@ const db = require('../db/db.js')
 router.get('/', async (req, res, next) => {
     try {
       const users = await db.query(`SELECT * FROM users`)
-      res.send(users);
+      res.send(users.rows);
     } catch (err) {
       next(err);
     }
@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => {
   router.get('/:id', async (req, res, next) => {
     try {
       const users_data = await db.query(`SELECT * FROM users INNER JOIN finances ON (users.id = finances.user_id) WHERE users.id = ${req.params.id}`)
-      res.send(users_data);
+      res.send(users_data.rows);
     } catch (err) {
       next(err);
     }
