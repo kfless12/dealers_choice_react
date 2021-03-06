@@ -1,6 +1,7 @@
 import React from 'react';
 
 const singleUser = ({ user })=>{
+    console.log(user)
     return (    
             <div className = 'container'>
                 <h1>User Information</h1>

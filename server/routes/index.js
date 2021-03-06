@@ -13,7 +13,7 @@ router.get('/', async (req, res, next) => {
 
   router.get('/:id', async (req, res, next) => {
     try {
-      const users_data = await db.query(`SELECT * FROM users, finances, game_results WHERE users.id = ${req.params.id}, game_results.user_id = ${req.params.id}, finances.user_id = ${req.params.id}`)
+      const users_data = await db.query(`SELECT * FROM users INNER JOIN finances ON (users.id = finances.user_id) WHERE users.id = ${req.params.id}`)
       res.send(users_data);
     } catch (err) {
       next(err);

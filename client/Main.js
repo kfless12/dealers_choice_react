@@ -3,6 +3,8 @@ import axios from 'axios';
 import Userlist from './userlist'
 import SingleUser from './singleUser'
 
+let user;
+
 class Main extends React.Component{
     constructor(props){
         super(props);
@@ -20,8 +22,11 @@ class Main extends React.Component{
     }
 
     async userSelect(id){
-        const user = (await axios.get(`/users/${id}`)).data.rows;
-        this.selectState({ selected: user})        
+        user = (await axios.get(`/users/${id}`)).data.rows;
+        console.log(user)
+        this.setState({ selected: user})
+        
+             
     }
 
     render()
@@ -30,7 +35,7 @@ class Main extends React.Component{
         <div id="main" className="row container">
             <h1>Casino User Database!</h1>
             <p>Welcome to the backend database for the Dealers Choice Casino, Click on a User to see there information</p>
-        {selected ? <SingleUser selected = {selected}/> : <Userlist users = {users} selectUser = {this.userSelect}/>}
+        {selected ? <SingleUser selected = {user}/> : <Userlist users = {users} selectUser = {this.userSelect}/>}
         </div>
         )
     }
