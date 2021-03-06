@@ -1,6 +1,6 @@
 const { Client } = require('pg')
 const client = new Client({
- database: 'dealers_choice_pg'
+ database: process.env.DATABASE_URL || 'dealers_choice_pg'
 })
 
 
