@@ -27,9 +27,10 @@ for(let i = 0; i< 10; i++){
 for(let i = 0; i< 10; i++){
 await db.query(`INSERT INTO game_results ("user_id", "outcome") VALUES (${Math.ceil(Math.random()*10)}, '${(Math.floor(Math.random()*2) === 1 ? "won": "lost")}' )`)
 }
-await db.end()
+
     }catch(er){console.log(er)}
 }
-init();
+
+module.exports = init;
 
 
