@@ -4,8 +4,8 @@ const faker = require('faker')
 
 
 
-
-db.query(`
+async function sync(){ 
+await db.query(`
 
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS finances CASCADE;
@@ -19,16 +19,17 @@ CREATE TABLE game_results (id  SERIAL PRIMARY KEY , user_id integer REFERENCES u
 
 
 for(let i = 0; i< 10; i++){
-    db.query(`INSERT INTO users ("first_name", "last_name", "date_joined")VALUES ('${faker.name.firstName()}', '${faker.name.lastName()}', '${faker.date.recent()}' );`)
-    db.query(`INSERT INTO finances ("user_id", "account_name")VALUES ('${i+1}', '${faker.finance.accountName()}');`)
-    db.query(`INSERT INTO games ("title")VALUES ('${faker.commerce.product()}');`)
+    await db.query(`INSERT INTO users ("first_name", "last_name", "date_joined")VALUES ('${faker.name.firstName()}', '${faker.name.lastName()}', '${faker.date.recent()}' );`)
+    await db.query(`INSERT INTO finances ("user_id", "account_name")VALUES ('${i+1}', '${faker.finance.accountName()}');`)
+    await db.query(`INSERT INTO games ("title")VALUES ('${faker.commerce.product()}');`)
 
 }
 for(let i = 0; i< 10; i++){
-db.query(`INSERT INTO game_results ("user_id", "outcome") VALUES (${Math.ceil(Math.random()*10)}, '${(Math.floor(Math.random()*2) === 1 ? "won": "lost")}' )`)
+await db.query(`INSERT INTO game_results ("user_id", "outcome") VALUES (${Math.ceil(Math.random()*10)}, '${(Math.floor(Math.random()*2) === 1 ? "won": "lost")}' )`)
 }
 
 
+console.log('data seeded')
 
-
-
+}
+module.exports = [db, faker, sync]

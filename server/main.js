@@ -1,9 +1,10 @@
 const PORT = process.env.PORT || 8080
 const server = require('./index')
-const {db} = require('./db')
+const [db, faker, sync] = require('./db')
 
 const init = async () => {
   try {
+    sync()
     server.listen(PORT, () => console.log(`
 
           Listening on port ${PORT}
