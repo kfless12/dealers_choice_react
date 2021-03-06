@@ -5,6 +5,7 @@ const faker = require('faker')
 
 
 async function sync(){ 
+    try{
 await db.query(`
 
 DROP TABLE IF EXISTS users CASCADE;
@@ -30,6 +31,6 @@ await db.query(`INSERT INTO game_results ("user_id", "outcome") VALUES (${Math.c
 
 
 console.log('data seeded')
-
+    }catch(er){console.log(er)}
 }
 module.exports = [db, faker, sync]
