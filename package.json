@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./server/main.js",
-    "start_test": "npm run start-server & npm run build",
+    "start_test": "npm run start-server && npm run build",
     "start-server": "nodemon --watch server -e js,html server/main.js",
     "build-watch": "webpack --watch",
     "seed": "node ./server/db/index.js",

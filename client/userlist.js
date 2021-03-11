@@ -3,7 +3,7 @@ import React from 'react'
 const userList = ({users, selectUser}) =>{
     let userid;
 return (
-        <ul>
+        <ul id = "user">
             <h2>Users</h2>
             {users.map(user =>{  
                 return(

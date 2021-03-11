@@ -1,0 +1,39 @@
+html {
+	height: 100%;
+	background-image: linear-gradient(rgb(20, 6, 102), rgba(67, 76, 177, 0.938));
+	background-repeat: no-repeat;
+}
+nav {
+	font-size: x-large;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-around;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+nav a {
+	border: solid black 2px;
+	text-decoration: none;
+	color: honeydew;
+	padding-left: 25px;
+	padding-right: 25px;
+	background-color: rgb(40, 40, 124);
+}
+h1, h2, h3{
+	color: honeydew
+
+}
+p{
+	color: honeydew;
+
+}
+#user, #gameslist{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: honeydew;
+} 
+li{
+	list-style-type: none;
+	color: honeydew;
+}
