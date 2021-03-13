@@ -5,8 +5,10 @@ const nav = ({}) => {
 		<ul>
 			<nav>
 				<a href="/"> Home </a>
-				<a href="/Data"> Data </a>
-				<a href="/info"> Creater Info </a>
+				{
+				//<a href="/Data"> Data </a>
+				//<a href="/info"> Creater Info </a>
+				}
 			</nav>
 		</ul>
 	);

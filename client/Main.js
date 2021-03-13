@@ -4,7 +4,7 @@ import Userlist from './userlist';
 import SingleUser from './singleUser';
 import Nav from './nav.js';
 import Games_list from './gameslist.js';
-import Dice from './cards.js';
+import Dice from './dice.js';
 import Roulette from './roulette.js';
 import Cards from './cards.js'
 

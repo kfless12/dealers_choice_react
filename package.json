@@ -11,17 +11,10 @@
     "seed": "node ./server/db/index.js",
     "build": "webpack"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kfless12/dealers_choice_pg.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kfless12/dealers_choice_pg/issues"
-  },
-  "homepage": "https://github.com/kfless12/dealers_choice_pg#readme",
+  
   "dependencies": {
     "express": "^4.17.1",
     "faker": "^5.4.0",
