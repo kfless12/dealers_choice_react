@@ -27,7 +27,7 @@ class Main extends React.Component{
 
     async userSelect(id){
         const something = (await axios.get(`/users/${id}`)).data;
-        this.setState({ selected: something})  
+        this.setState({ selected: something})
     }
 
     transition(chosen){
@@ -39,7 +39,7 @@ class Main extends React.Component{
     }
 
     render()
-    { 
+    {
         const { users, selected, chosen } = this.state;
         return (
         <div id="main" className="row container">
@@ -49,6 +49,7 @@ class Main extends React.Component{
         {selected ? <SingleUser selected = {selected} retrn = {this.retrn}/> : <Userlist users = {users} selectUser = {this.userSelect}/>}
         {(()=>{
 
+        //refactor with react-router?
         switch(chosen){
             case "roulette": return <Roulette />;
             case "cards":    return <Cards />;

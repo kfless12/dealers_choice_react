@@ -8,25 +8,26 @@ const dice = () => {
           die.dataset.roll = getRandomNumber(1, 6);
         });
       }
-      
+
       function toggleClasses(die) {
         die.classList.toggle("odd-roll");
         die.classList.toggle("even-roll");
       }
-      
+
       function getRandomNumber(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
       }
-      
+
 
     return (
 
         <div>
         <h2> Dice Source code obtained from: <a href = "https://codesandbox.io/s/xjk3xqnprw?file=/app.js:0-516">https://codesandbox.io/s/xjk3xqnprw?file=/app.js:0-516</a></h2>
   <link rel="stylesheet" href="/dice.css" />
-    <div className="dice">
+        <div className="dice">
+          {/*if you go the refactor route, Die could be its own mini component */ }
       <ol className="die-list even-roll" data-roll="1" id="die-1">
         <li className="die-item" data-side="1">
           <span className="dot"></span>
