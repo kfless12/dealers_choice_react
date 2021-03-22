@@ -14,6 +14,8 @@ class Main extends React.Component{
         super(props);
         this.state = { users: [], selected: false, chosen: "list" }
 
+        //you dont have to bind componentDidMount because its a react function.
+        //you only need to bind functions you define. 
         this.componentDidMount = this.componentDidMount.bind(this);
         this.userSelect = this.userSelect.bind(this);
         this.retrn = this.retrn.bind(this);
